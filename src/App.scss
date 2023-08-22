@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+// color variables
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+
+// Custom class
+
+%customAlignCenter {
+  display: block;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Manrope", sans-serif;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: $DarkBlue;
+  .adviceContainer {
+    max-width: 500px;
+    background-color: $DarkGrayishBlue;
+    margin-inline: 10px;
+    border-radius: 15px;
+    > h6 {
+      text-align: center;
+      color: $NeonGreen;
+      text-transform: uppercase;
+      margin-block: 25px;
+      letter-spacing: 3px;
+    }
+    > p {
+      text-align: center;
+      color: $LightCyan;
+      padding-inline: 20px;
+      margin-block: 25px;
+      font-size: 28px;
+    }
+    > picture > img {
+      @extend %customAlignCenter;
+      margin-block: 10px;
+    }
+
+    > button {
+      @extend %customAlignCenter;
+      position: relative;
+      top: 25px;
+      background-color: $NeonGreen;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        box-shadow: $NeonGreen 0px 0px 32px;
+      }
+
+      > img {
+        @extend %customAlignCenter;
+        padding: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 465px) {
+  main .adviceContainer > p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 280px) {
+  main .adviceContainer {
+    > p {
+      font-size: 16px;
+    }
+    > picture > img {
+      width: 90%;
+    }
+  }
+}
